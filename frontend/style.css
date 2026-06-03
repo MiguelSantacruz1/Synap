@@ -96,6 +96,19 @@ body {
     z-index: 10;
 }
 
+.brand-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-logo {
+    height: 40px;
+    width: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
 .logo {
     font-size: 1.8rem;
     font-weight: 800;
