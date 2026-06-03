@@ -1,0 +1,17 @@
+com\sistema\flashcards\config\CorsConfig.class
+com\sistema\flashcards\repository\DeckRepository.class
+com\sistema\flashcards\model\Deck.class
+com\sistema\flashcards\repository\FlashcardRepository.class
+com\sistema\flashcards\service\EmailService.class
+com\sistema\flashcards\model\UserProgress.class
+com\sistema\flashcards\config\CorsConfig$1.class
+com\sistema\flashcards\repository\UserRepository.class
+com\sistema\flashcards\model\Flashcard.class
+com\sistema\flashcards\controller\FlashcardController.class
+com\sistema\flashcards\dto\ReviewRequestDTO.class
+com\sistema\flashcards\FlashcardsApplication.class
+com\sistema\flashcards\repository\UserProgressRepository.class
+com\sistema\flashcards\service\LeitnerService.class
+com\sistema\flashcards\model\User.class
+com\sistema\flashcards\config\DatabaseSeeder.class
+com\sistema\flashcards\dto\FlashcardDTO.class
