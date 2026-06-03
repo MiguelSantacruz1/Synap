@@ -1,5 +1,9 @@
 # Synap - Plataforma de Repaso Espaciado
 
+<p align="center">
+  <img src="./docs/synap_logo.png" alt="Synap Logo" width="120">
+</p>
+
 Synap es una plataforma inteligente de flashcards que implementa el método Leitner para optimizar el aprendizaje mediante la técnica de repetición espaciada.
 
 ## Arquitectura y Diseño del Sistema
