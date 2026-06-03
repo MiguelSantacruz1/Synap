@@ -6,8 +6,8 @@ Synap es una plataforma inteligente de flashcards que implementa el método Leit
 
 A continuación se presenta la documentación arquitectónica del proyecto a través de 5 vistas clave que detallan el diseño de la plataforma.
 
-### 1. Diagrama de Contexto
-![Diagrama de Contexto](./docs/1-contexto.png)
+### 1. Vista de Contexto
+![Vista de Contexto](./docs/1-contexto.png)
 
 **Descripción:** Muestra las interacciones de alto nivel entre el usuario principal (Estudiante) y los diferentes sistemas externos de los que depende la aplicación.
 
@@ -15,17 +15,8 @@ A continuación se presenta la documentación arquitectónica del proyecto a tra
 
 ---
 
-### 2. Diagrama de Despliegue
-![Diagrama de Despliegue](./docs/2-despliegue.png)
-
-**Descripción:** Ilustra la arquitectura física del sistema y los nodos (servidores y dispositivos) donde se ejecutan los diferentes artefactos de software.
-
-**Explicación:** El frontend (archivos estáticos `index.html`, `style.css`, `app.js`) se ejecuta directamente en el **Computador del Estudiante (Navegador Web)**. Este cliente se comunica vía HTTP con el entorno de producción alojado en **Railway**, el cual ejecuta una **JVM con Java 17** corriendo el empaquetado del backend (`flashcards-SNAPSHOT.jar`). A su vez, el servidor de Spring Boot mantiene conexiones persistentes (Protocolo MongoDB) con el clúster de **MongoDB Atlas** para leer y escribir datos, y se comunica por SMTP con el **Servidor de Brevo** para despachar correos.
-
----
-
-### 3. Diagrama de Componentes
-![Diagrama de Componentes](./docs/3-componentes.png)
+### 2. Vista Funcional (Diagrama de Componentes)
+![Vista Funcional](./docs/3-componentes.png)
 
 **Descripción:** Detalla los subsistemas (Frontend y Backend) y cómo interactúan estructuralmente los componentes internos a través de interfaces.
 
@@ -33,8 +24,17 @@ A continuación se presenta la documentación arquitectónica del proyecto a tra
 
 ---
 
-### 4. Diagrama de Arquitectura de Capas
-![Diagrama de Arquitectura de Capas](./docs/4-capas.png)
+### 3. Modelo Conceptual de Clases
+![Modelo Conceptual de Clases](./docs/5-clases.png)
+
+**Descripción:** Proporciona la vista estática microscópica del sistema, definiendo clases exactas, atributos, métodos, relaciones, cardinalidad y tipos de datos.
+
+**Explicación:** El modelo muestra entidades clave y cómo se relacionan: un Usuario (`User`) posee varios Mazos (`Deck`), y un Mazo se compone de múltiples Tarjetas (`Flashcard`). El seguimiento individual de aprendizaje se da gracias a la entidad `UserProgress`, que rastrea el nivel de la caja (`box`) actual de la tarjeta y programa dinámicamente la próxima fecha de repaso (`nextReview`) según la dificultad elegida (representada por el Enum `DIFFICULTY`: *EASY, GOOD, HARD*). También refleja la existencia de objetos de transferencia de datos (DTOs) que transportan peticiones seguras desde el Controlador hasta los Servicios sin exponer el modelo de base de datos directamente.
+
+---
+
+### 4. Vista de Implementación / Desarrollo (Diagrama de Clases por Capas)
+![Vista de Implementación](./docs/4-capas.png)
 
 **Descripción:** Muestra la organización lógica del código fuente en el backend, evidenciando una separación limpia y estructurada mediante el patrón de Capas MVC/Service.
 
@@ -47,9 +47,9 @@ Esta modularización permite que la aplicación sea altamente mantenible y fáci
 
 ---
 
-### 5. Diagrama de Clases Detallado
-![Diagrama de Clases Detallado](./docs/5-clases.png)
+### 5. Vista de Despliegue
+![Vista de Despliegue](./docs/2-despliegue.png)
 
-**Descripción:** Proporciona la vista estática microscópica del sistema, definiendo clases exactas, atributos, métodos, relaciones, cardinalidad y tipos de datos.
+**Descripción:** Ilustra la arquitectura física del sistema y los nodos (servidores y dispositivos) donde se ejecutan los diferentes artefactos de software.
 
-**Explicación:** El modelo muestra entidades clave y cómo se relacionan: un Usuario (`User`) posee varios Mazos (`Deck`), y un Mazo se compone de múltiples Tarjetas (`Flashcard`). El seguimiento individual de aprendizaje se da gracias a la entidad `UserProgress`, que rastrea el nivel de la caja (`box`) actual de la tarjeta y programa dinámicamente la próxima fecha de repaso (`nextReview`) según la dificultad elegida (representada por el Enum `DIFFICULTY`: *EASY, GOOD, HARD*). También refleja la existencia de objetos de transferencia de datos (DTOs) que transportan peticiones seguras desde el Controlador hasta los Servicios sin exponer el modelo de base de datos directamente.
+**Explicación:** El frontend (archivos estáticos `index.html`, `style.css`, `app.js`) se ejecuta directamente en el **Computador del Estudiante (Navegador Web)**. Este cliente se comunica vía HTTP con el entorno de producción alojado en **Railway**, el cual ejecuta una **JVM con Java 17** corriendo el empaquetado del backend (`flashcards-SNAPSHOT.jar`). A su vez, el servidor de Spring Boot mantiene conexiones persistentes (Protocolo MongoDB) con el clúster de **MongoDB Atlas** para leer y escribir datos, y se comunica por SMTP con el **Servidor de Brevo** para despachar correos.
