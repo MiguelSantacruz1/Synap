@@ -15,7 +15,7 @@ public class CorsConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**")
                         // Cambiar por tu subdominio de Vercel y mantener el localhost para desarrollo
-                        .allowedOrigins("https://tu-cliente-vercel.vercel.app", "http://127.0.0.1:5500", "http://localhost:5500", "http://localhost:3000", "null") 
+                        .allowedOrigins("https://synap-f.vercel.app", "http://127.0.0.1:5500", "http://localhost:5500", "http://localhost:3000", "null") 
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);

@@ -1,5 +1,5 @@
 // Flashcards array loaded from Spring Boot Backend
-const API_BASE_URL = 'http://localhost:8080'; // CAMBIA ESTO POR LA URL DE RAILWAY AL DESPLEGAR
+const API_BASE_URL = 'https://synap-b-production.up.railway.app'; // URL del backend en producción
 let flashcardsData = [];
 
 let currentIndex = 0;
