@@ -3,7 +3,7 @@
 
 ---
 
-### 2 Vista funcional
+### 2 Vista funcional (diagrama de componentes)
 ![Vista Funcional](./docs/3-componentes.png)
 
 ---
@@ -13,8 +13,8 @@
 
 ---
 
-### 4 Vista de desarrollo
-![Vista de Desarrollo](./docs/4-capas.png)
+### 4 Vista de implementación/desarrollo (diagrama de clases por capas)
+![Vista de Implementación](./docs/4-capas.png)
 
 ---
 
