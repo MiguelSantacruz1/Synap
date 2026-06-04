@@ -8,7 +8,12 @@
 
 ---
 
-### 3 Vista de desarrollo
+### 3 Modelo conceptual de clases
+![Modelo Conceptual de Clases](./docs/5-clases.png)
+
+---
+
+### 4 Vista de desarrollo
 ![Vista de Desarrollo](./docs/4-capas.png)
 
 ---
